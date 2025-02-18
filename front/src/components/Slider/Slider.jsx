@@ -4,22 +4,23 @@ import 'swiper/css';
 import styles from './Slider.module.scss';
 import { useRef, useEffect } from 'react';
 import nextIcon from './../../assets/img/nextSlide.svg';
+import { useWindowWidth } from '../../hooks/hooks';
 
 const Slider = ({ activePoint }) => {
-  const swiperRef = useRef(null);
-
+  const swiperRef = useRef(null);// реф на слайдер
+  const windowWidth = useWindowWidth(); // кастомный хук на определение ширины экрана
   useEffect(() => {
-    console.log("activePoint", activePoint)
     if (swiperRef.current) {
       swiperRef.current.slideTo(0); 
     }
-  }, [activePoint]); 
+  }, [activePoint]); // при пирилистывание сбрасывание слайдера на 1 слайд
+
 
   return (
     <div className={styles.slider}>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={80}
+        slidesPerView={windowWidth > 990 ? 3 : 2}
+        spaceBetween={windowWidth > 990 ? 80 : 60}
         pagination={{ clickable: true }}
         modules={[Pagination]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}

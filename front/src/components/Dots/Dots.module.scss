@@ -1,0 +1,29 @@
+.pointList {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    .pointItemPhone {
+        width: 6px;
+        height: 6px;
+        background-color: var(--textColor);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        opacity: 0.5;
+        &:hover{
+            transform: scale(1.2);
+
+        }
+    }
+    .activePointPhone {
+        background-color: var(--textColor); // Цвет активной точки
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
