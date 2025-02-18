@@ -1,0 +1,35 @@
+
+.slider{
+    cursor: pointer;
+    .date{
+        color: var(--blueColor);
+        font-size: 25px;
+        font-weight: 400px;
+        margin-bottom: 15px;
+    }
+    .text{
+        font-size: 20px;
+        color: var(--textColor);
+        line-height: 30px;
+        height: 100px;
+    }
+    .nextButton {
+        position: absolute;
+        top: calc(50% + 50px);
+        transform: (translateY(-50%));
+        right: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0px 0px 15px 0px #3877EE1A;
+        width: 40px;
+        height: 40px;
+        z-index: 10;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 400px;
+      }
+}
