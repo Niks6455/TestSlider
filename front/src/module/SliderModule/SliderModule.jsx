@@ -4,6 +4,7 @@ import Layout from "../../components/Layout/Layout";
 import styles from "./SliderModule.module.scss";
 import Slider from "../../components/Slider/Slider";
 import { ReactComponent as ButtonSlider } from "./../../assets/img/buttonSlider.svg";
+import { ReactComponent as PhoneButton } from "./../../assets/img/phoneButton.svg";
 import { Sliderdata } from "./sliderTestData";
 import { useWindowWidth } from "../../hooks/hooks";
 import Dots from "../../components/Dots/Dots";
@@ -84,7 +85,7 @@ function SliderModule() {
 
     //!Функция при mouseout c точки
     const handleHoverOut = (index) => {
-        index !== activePoint.id - 1 && gsap.to(pointRefs.current[index], {
+        gsap.to(pointRefs.current[index], {
             scale: 1,
             duration: 0.2,
             boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)",
@@ -187,8 +188,8 @@ function SliderModule() {
                                 <p>0{activePoint?.id} / 0{points?.length}</p>
                             </div>
                             <div className={styles.buttonContainerPhone}>
-                                <button onClick={() => clickPoint("prew")}><ButtonSlider/></button>     
-                                <button onClick={() => clickPoint("next")}><ButtonSlider/></button>        
+                                <button onClick={() => clickPoint("prew")}><PhoneButton/></button>     
+                                <button onClick={() => clickPoint("next")}><PhoneButton/></button>        
                             </div>
                         </div>
                        <Dots activePoint={activePoint} points={points} handleClick={handleClick}/>

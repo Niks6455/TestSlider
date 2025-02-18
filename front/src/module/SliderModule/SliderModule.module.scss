@@ -117,7 +117,7 @@
         }
         @media (max-width: 580px) {
            flex-direction: row;
-           width: 273px;
+           width: auto;
            font-size: 56px;
            line-height: 56px;
            top: 200px;
@@ -130,12 +130,14 @@
             color: var(--purpleColor);
             @media (max-width: 580px) {
                 color: var(--blueColor);
-             }
+                margin-right: 15px;
+            }
            }
         }
         .dateEnd{
             p{
                 color: var(--pinkColor);
+                margin-left: 15px;
             }
         }
     }
@@ -207,13 +209,30 @@
                 @include ButtonSlider(25px);
                 margin: 0;
                 button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    width: 25px;
+                    height: 25px;
                     &:first-child{
                         margin-right: 9px;
+                        svg{
+                            position: absolute;
+                            left: 48%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                        }
                     }
-                }
-                svg{
-                    width: 6px;
-                    height: 9px;
+                    &:last-child{
+                        margin-left: 9px;
+                        svg{
+                            position: absolute;
+                            left: 48%;
+                            top: 48%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
                 }
             }
         }
